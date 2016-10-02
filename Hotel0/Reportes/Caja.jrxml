@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Caja" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="78b3272d-b9c7-4433-8b18-7486d6f05f4c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     *,
+     pago.`dnicliente` AS pago_dnicliente,
+     pago.`precio_total` AS pago_precio_total,
+     pago.`fecha_pago` AS pago_fecha_pago,
+     pago.`metodo_pago` AS pago_metodo_pago,
+     hotel.`nombrehotel` AS hotel_nombrehotel
+FROM
+     `pago` pago,
+     `hotel` hotel
+ORDER BY
+     `idreserva`
+ DESC LIMIT 1;]]>
+	</queryString>
+	<field name="dnicliente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idreserva" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio_total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_pago" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="metodo_pago" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombrehotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cifhotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="direccionhotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cphotel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonohotel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidadhotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paishotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="provinciahotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emailhotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="plantashotel" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="roleshotel" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="vistashabitacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="capacidadhabitacion" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tiposhabitacion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pago_dnicliente" class="java.lang.String"/>
+	<field name="pago_precio_total" class="java.lang.Integer"/>
+	<field name="pago_fecha_pago" class="java.sql.Date"/>
+	<field name="pago_metodo_pago" class="java.lang.String"/>
+	<field name="hotel_nombrehotel" class="java.lang.String"/>
+	<group name="dnicliente">
+		<groupExpression><![CDATA[$F{dnicliente}]]></groupExpression>
+		<groupHeader>
+			<band height="36">
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="148a7998-4f21-4537-ab71-7234a99799ce"/>
+				</line>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="12" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2738d23e-86f9-4ad1-b539-bf34995765d7"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nº Reserva]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="138" y="12" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="45153fae-1141-4ac4-83f8-8f5de46310b9"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Importe Total]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="276" y="12" width="138" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b8605e89-134d-4b4e-990a-5996b76f92e7"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Fecha de Pago]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="414" y="12" width="141" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8baf1a0c-1eb9-4a04-aed4-8b344e242f49"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Método de Pago]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#F2E8BD" uuid="c4a54211-6de8-431b-b1dd-6ed2264f3cb4"/>
+				<staticText>
+					<reportElement x="434" y="45" width="141" height="18" forecolor="#333333" uuid="2a069fc0-81b6-4e73-b243-775d7556d621"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Facturación]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="20" y="20" width="341" height="43" uuid="1e054a50-7c1b-4e61-a419-c1fecfccc0c7"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hotel_nombrehotel}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="47">
+			<line>
+				<reportElement x="-20" y="46" width="595" height="1" forecolor="#666666" uuid="6e706910-5c0a-4fe5-8bc8-28209146abdf"/>
+			</line>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="46" forecolor="#000000" backcolor="#E6E6E6" uuid="b708db2c-66f8-4844-a12f-1953e350cacc"/>
+				<textElement textAlignment="Center">
+					<font size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dnicliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="7990506e-e381-495b-90cd-58ec3dad4a85"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="138" height="20" forecolor="#333333" uuid="c3f5ce62-d97e-428c-bff8-f757cf399b0f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idreserva}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="138" y="0" width="138" height="20" forecolor="#333333" uuid="6c5e326b-d097-4dc3-940e-8be0c657d20e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precio_total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="138" height="20" forecolor="#333333" uuid="6548f62c-4988-47bf-b044-3624b65cbcb9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_pago}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="414" y="0" width="138" height="20" forecolor="#333333" uuid="749df966-0ef5-490d-9aef-cfda0f625bc6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{metodo_pago}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="fdd6eb66-f6d0-41d0-88a9-c93e2c3927f6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="6b1f41d7-b987-40ae-a1de-5b91dbf58f2b"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="ea4d5199-b237-44ee-98bd-9dc59b0172e1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

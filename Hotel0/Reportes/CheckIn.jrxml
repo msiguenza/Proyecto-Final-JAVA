@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CheckIn" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="da6da51d-e532-4d64-8c3a-69532a061d9d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     check_in.`idreserva` AS check_in_idreserva,
+     check_in.`numhab` AS check_in_numhab,
+     check_in.`fechaentrada` AS check_in_fechaentrada,
+     check_in.`condicionalojamiento` AS check_in_condicionalojamiento,
+     check_in.`dnicliente` AS check_in_dnicliente,
+     check_in.`numpersonas` AS check_in_numpersonas,
+     check_in.`preciototal` AS check_in_preciototal,
+     hotel.`nombrehotel` AS hotel_nombrehotel
+FROM
+     `check_in` check_in,
+     `hotel` hotel
+ORDER BY
+     check_in.`dnicliente` ASC]]>
+	</queryString>
+	<field name="check_in_idreserva" class="java.lang.Integer"/>
+	<field name="check_in_numhab" class="java.lang.Integer"/>
+	<field name="check_in_fechaentrada" class="java.sql.Date"/>
+	<field name="check_in_condicionalojamiento" class="java.lang.String"/>
+	<field name="check_in_dnicliente" class="java.lang.String"/>
+	<field name="check_in_numpersonas" class="java.lang.Integer"/>
+	<field name="check_in_preciototal" class="java.lang.Integer"/>
+	<field name="hotel_nombrehotel" class="java.lang.String"/>
+	<group name="check_in_dnicliente">
+		<groupExpression><![CDATA[$F{check_in_dnicliente}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<textField>
+					<reportElement mode="Opaque" x="0" y="0" width="555" height="32" forecolor="#333333" backcolor="#E6E6E6" uuid="0a6e4600-d949-4855-8f2b-f46b7d2efd8d"/>
+					<textElement textAlignment="Center">
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{check_in_dnicliente}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="1357387b-3b33-4871-935a-35af5dc96f9d"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="ddd4dee7-e375-40a0-8df5-ee2ddd2bfa26"/>
+				<staticText>
+					<reportElement x="341" y="43" width="234" height="20" forecolor="#FFFF99" backcolor="#FFFF99" uuid="b8fa6169-cfcf-45ac-a9d9-a3acc02c40d7"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Check-In]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="20" y="20" width="321" height="42" forecolor="#FFFFFF" uuid="ed24cb3c-44c8-4611-9018-e5aaaeb0a059"/>
+					<textElement>
+						<font size="30" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{hotel_nombrehotel}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="42a20a58-a719-463a-aadb-2ce08e3fa503"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="77" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5e66e86c-3066-4d3e-87b6-1df54fad0f67"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reserva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="77" y="0" width="107" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="bb85920d-1afd-41fa-8e72-71e024ae7135"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº Habitación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="184" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ece5bb2d-4963-4358-9ad9-03f82d4f31aa"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[F Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="17702d07-a60e-4097-928c-6f59de8506c3"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alojamiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="0" width="92" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a4132bd4-107b-45a3-8601-8821565fb439"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nº Personas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="0" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a168b5f1-1a8d-44e9-bdef-5f00141d3489"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="f87ec4c8-3bce-4e78-a6df-9f578b1d86a4"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="77" height="20" uuid="3b1591c4-6c03-4d2b-8dfa-dedd3ad668d2"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_idreserva}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="77" y="0" width="107" height="20" uuid="dfd53213-2ded-432e-b2de-d11d7eb47eff"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_numhab}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="184" y="0" width="92" height="20" uuid="034a779d-8101-4bb7-89e6-b90dccd67ad0"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_fechaentrada}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="276" y="0" width="92" height="20" uuid="88342db4-4bad-433a-ba9a-76297c4cce10"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_condicionalojamiento}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="368" y="0" width="92" height="20" uuid="6d7eee11-3257-4abd-bc3e-ea2d163c51e5"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_numpersonas}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="460" y="0" width="92" height="20" uuid="57be381a-3653-48ea-85dc-705aadc0b3ea"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{check_in_preciototal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6bea5aa0-f1e2-4589-a0a6-cf1ad9c3cda5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="aaa29591-e2bd-42ad-b5c5-f8f922b1f781"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="7a0e7290-7fb3-4add-a248-dd37cbb610de"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
